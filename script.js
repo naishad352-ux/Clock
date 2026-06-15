@@ -64,21 +64,21 @@ const domNewYorkTime = document.getElementById('newYorkTime');
 function updateClocks() {
     const now = new Date();
 
-    domDigitalClock.innerText = now.toLocaleTimeString('en-US', { hour12: false });
-    domDateDisplay.innerText = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    if (domDigitalClock) domDigitalClock.innerText = now.toLocaleTimeString('en-US', { hour12: false });
+    if (domDateDisplay) domDateDisplay.innerText = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
     const secs = now.getSeconds();
     const mins = now.getMinutes();
     const hrs = now.getHours();
 
-    domSecond.style.transform = `rotate(${secs * 6}deg)`;
-    domMinute.style.transform = `rotate(${mins * 6 + secs * 0.1}deg)`;
-    domHour.style.transform = `rotate(${hrs * 30 + mins * 0.5}deg)`;
+    if (domSecond) domSecond.style.transform = `rotate(${secs * 6}deg)`;
+    if (domMinute) domMinute.style.transform = `rotate(${mins * 6 + secs * 0.1}deg)`;
+    if (domHour) domHour.style.transform = `rotate(${hrs * 30 + mins * 0.5}deg)`;
 
     // Lazy load string formatting to prevent interval lag
-    domIndiaTime.innerText = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata' });
-    domLondonTime.innerText = now.toLocaleTimeString('en-US', { timeZone: 'Europe/London' });
-    domNewYorkTime.innerText = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+    if (domIndiaTime) domIndiaTime.innerText = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata' });
+    if (domLondonTime) domLondonTime.innerText = now.toLocaleTimeString('en-US', { timeZone: 'Europe/London' });
+    if (domNewYorkTime) domNewYorkTime.innerText = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
 
     checkAlarm(now);
 }

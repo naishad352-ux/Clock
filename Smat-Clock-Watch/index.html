@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Clock Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo-box">
+            <span>🕒</span>
+            <h1>Smart Clock Suite</h1>
+        </div>
+        <div class="header-actions">
+            <button id="themeBtn" title="Toggle Theme" class="fallback-btn">
+                <span class="mode-icon">🌙</span> <span class="btn-text">Dark Mode</span>
+            </button>
+            <button id="settingsBtn" onclick="alert('Settings Coming Soon')" title="Settings" class="fallback-btn">
+                <span>⚙️</span> <span class="btn-text">Settings</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CLOCK PAGE -->
+    <section id="clockPage" class="page active">
+        <div class="card">
+            <h2>Digital Clock</h2>
+            <div id="digitalClock" class="digital-clock">00:00:00</div>
+            <div id="dateDisplay" class="date-display">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h2>Analog Clock</h2>
+            <div class="analog-clock">
+                <div class="hand hour" id="hour"></div>
+                <div class="hand minute" id="minute"></div>
+                <div class="hand second" id="second"></div>
+                <div class="center-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMER PAGE -->
+    <section id="timerPage" class="page">
+        <div class="card">
+            <h2>Timer</h2>
+            <div class="timer-inputs">
+                <input type="number" id="hours" placeholder="HH" min="0" max="23">
+                <input type="number" id="minutes" placeholder="MM" min="0" max="59">
+                <input type="number" id="seconds" placeholder="SS" min="0" max="59">
+            </div>
+            <select id="timerSound">
+                <option value="beep1">🎵 Beep Sound 1</option>
+                <option value="beep2">🎵 Beep Sound 2</option>
+            </select>
+            <div id="timerDisplay" class="big-display">00:00:00</div>
+            <div class="button-group">
+                <button id="startTimerBtn">Start</button>
+                <button id="pauseTimerBtn">Pause</button>
+                <button id="resetTimerBtn">Reset</button>
+            </div>
+            <h3>Recent Timers</h3>
+            <div id="recentTimers">No Recent Timers</div>
+            <button id="clearRecentBtn">Clear Recent</button>
+        </div>
+    </section>
+
+    <!-- STOPWATCH PAGE -->
+    <section id="stopwatchPage" class="page">
+        <div class="card">
+            <h2>Stopwatch</h2>
+            <div id="stopwatchDisplay" class="big-display">00:00:00:00</div>
+            <div class="button-group">
+                <button id="startStopwatchBtn">Start</button>
+                <button id="pauseStopwatchBtn">Pause</button>
+                <button id="resetStopwatchBtn">Reset</button>
+                <button id="lapBtn">Lap</button>
+            </div>
+            <h3>Lap History</h3>
+            <div id="lapHistory">No Laps Recorded</div>
+        </div>
+    </section>
+
+    <!-- WORLD CLOCK PAGE -->
+    <section id="worldClockPage" class="page">
+        <div class="card">
+            <h2>🌍 World Clock</h2>
+            <div class="world-time">
+                <p>🇮🇳 India: <span id="indiaTime"></span></p>
+                <p>🇬🇧 London: <span id="londonTime"></span></p>
+                <p>🇺🇸 New York: <span id="newYorkTime"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALARM PAGE -->
+    <section id="alarmPage" class="page">
+        <div class="card">
+            <h2>⏰ Alarm</h2>
+            <input type="time" id="alarmTime">
+            <select id="alarmSound">
+                <option value="beep1">🎵 Beep Sound 1</option>
+                <option value="beep2">🎵 Beep Sound 2</option>
+            </select>
+            <div class="button-group">
+                <button id="setAlarmBtn">🔔 Set Alarm</button>
+                <button id="cancelAlarmBtn">❌ Cancel</button>
+                <button onclick="playSystemBeep(440, 0.5)">🔊 Test</button>
+            </div>
+            <div id="alarmStatus">No Alarm Set</div>
+        </div>
+    </section>
+
+    <!-- MOBILE NAVIGATION (FIXED WITH SYSTEM EMOJIS) -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="showPage('clockPage', this)">
+            <span class="nav-icon">🕒</span>
+            <span>Clock</span>
+        </button>
+        <button class="nav-btn" onclick="showPage('timerPage', this)">
+            <span class="nav-icon">⏳</span>
+            <span>Timer</span>
+        </button>
+        <button class="nav-btn" onclick="showPage('stopwatchPage', this)">
+            <span class="nav-icon">⏱️</span>
+            <span>Stopwatch</span>
+        </button>
+        <button class="nav-btn" onclick="showPage('alarmPage', this)">
+            <span class="nav-icon">⏰</span>
+            <span>Alarm</span>
+        </button>
+        <button class="nav-btn" onclick="showPage('worldClockPage', this)">
+            <span class="nav-icon">🌍</span>
+            <span>World</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

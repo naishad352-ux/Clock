@@ -1,0 +1,5 @@
+<audio id="ding" src="sounds/ding.mp3"></audio>
+<audio id="bell" src="sounds/bell.mp3"></audio>
+<audio id="alarm" src="sounds/alarm.mp3"></audio>
+<audio id="chime" src="sounds/chime.mp3"></audio>
+<audio id="notification" src="sounds/notification.mp3"></audio>

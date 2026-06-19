@@ -282,7 +282,7 @@ body {
   font-weight: 900;
   letter-spacing: 4px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #ffffff, #7dd3fc);
+  background: linear-gradient(90deg, #f3f1f1, #0c0c0c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

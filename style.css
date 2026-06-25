@@ -234,7 +234,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* ✅ UPGRADED: splash logo uses gradient text correctly */
+/*splash logo uses gradient text correctly */
 .splash-logo-name {
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
@@ -352,7 +352,7 @@ body {
   50%      { filter: drop-shadow(0 0 20px rgba(91,232,200,0.85)); }
 }
 
-/* ✅ FIXED: logo name — no webkit conflict, visible in all browsers */
+/* logo name — no webkit conflict, visible in all browsers */
 .logo-name {
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(1.1rem, 3.5vw, 1.75rem);
@@ -383,7 +383,7 @@ body {
   align-items: center;
 }
 
-/* ✅ UPGRADED: theme button — consistent radius, better hover */
+/*theme button — consistent radius, better hover */
 .dark-mode-btn {
   width: 42px; height: 42px;
   border: 1px solid var(--border);
